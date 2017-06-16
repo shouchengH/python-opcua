@@ -1148,6 +1148,7 @@ def extensionobject_from_binary(data):
     body = None
     if Encoding & (1 << 0):
         length = uabin.Primitives.Int32.unpack(data)
+        length = len(data) - 8;
         if length < 1:
             body = Buffer(b"")
         else:
